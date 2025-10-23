@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test CSS simple</title>
+  <style>
+    /* Reset très basique */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Fond et police */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.5;
+      padding: 32px;
+    }
+
+    /* Conteneur centré */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    header p {
+      color: #556;
+    }
+
+    /* Grid simple pour les cartes */
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur desktop */
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(20,30,60,0.06);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(20,30,60,0.10);
+    }
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Bouton simple */
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.15s ease, transform 0.12s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:hover { background: #1e4ed8; }
+
+    /* Petite zone de texte */
+    .note {
+      background: #eef2ff;
+      border-radius: 8px;
+      padding: 12px;
+      color: #1e3a8a;
+      margin-bottom: 18px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #667;
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    /* Responsive : passe à 1 colonne sur petits écrans, 2 colonnes tablette */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Test CSS — Exemple simple</h1>
+      <p>Un petit layout avec cartes, bouton et responsive.</p>
+    </header>
+
+    <div class="note">
+      Essaie de redimensionner la fenêtre pour voir la grille se réorganiser.
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Carte 1</h3>
+        <p>Texte de démonstration. Cette carte montre l'ombre et l'animation hover.</p>
+      </article>
+
+      <article class="card">
+        <h3>Carte 2</h3>
+        <p>Une autre carte. Tu peux copier-coller la classe <code>.card</code> pour créer plus de blocs.</p>
+      </article>
+
+      <article class="card">
+        <h3>Carte 3</h3>
+        <p>Les styles sont volontairement simples pour faciliter la lecture et la modification.</p>
+      </article>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn" onclick="alert('Test réussi ✅')">Clique-moi</button>
+    </div>
+
+    <footer>
+      <p>Fichier de test — modifie les couleurs et les tailles pour t'entraîner.</p>
+    </footer>
+  </div>
+</body>
+</html>
+
+
